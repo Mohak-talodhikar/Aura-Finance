@@ -38,13 +38,13 @@ export default function TopNav({ currentView, setCurrentView }: TopNavProps) {
     // 2. Budget Warnings
     budgets.forEach(b => {
       const spent = transactions
-        .filter(t => t.category === b.category && t.amount < 0)
+        .filter(t => t.category === b.name && t.amount < 0)
         .reduce((sum, t) => sum + Math.abs(t.amount), 0);
       if (spent >= b.limit * 0.8) {
         newNotifs.push({
           id: `budget-${b.id}`,
           title: 'Budget Warning',
-          message: `You have reached ${Math.round((spent/b.limit)*100)}% of your ${b.category} budget.`,
+          message: `You have reached ${Math.round((spent/b.limit)*100)}% of your ${b.name} budget.`,
           time: 'Recent',
           read: false,
           timestamp: Date.now() - 1000 // slightly offset so it sorts well
