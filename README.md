@@ -2,11 +2,10 @@
 
 **The Architectural Ledger.**
 
-[Live Demo]
+[Live Demo](https://aura-financ.web.app/)
 
 Aura Finance is a high-end, editorial-style financial management application designed for precision wealth building. Experience financial clarity through a meticulously crafted interface powered by modern AI and robust infrastructure.
 
-![Aura Finance Preview](./preview.png)
 
 ## 🚀 Features
 
