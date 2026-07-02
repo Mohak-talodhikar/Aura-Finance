@@ -7,9 +7,9 @@ export default function Insights() {
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [activeToast, setActiveToast] = useState<string | null>(null);
-  const [selectedModel, setSelectedModel] = useState('gemini-3.1-pro-preview');
+  const [selectedModel, setSelectedModel] = useState('gemini-3-flash-preview');
   const chatEndRef = useRef<HTMLDivElement>(null);
- 
+
   const netCashFlow = monthlyIncome - monthlyExpenses;
   const isPositiveCashFlow = netCashFlow >= 0;
 
@@ -53,9 +53,9 @@ export default function Insights() {
     setIsTyping(true);
     
     try {
-      const apiKey = process.env.GEMINI_API_KEY;
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
       if (!apiKey) {
-        throw new Error("Gemini API key is missing. Please go to the 'Settings' menu in AI Studio (gear icon) and add a secret named 'GEMINI_API_KEY' with your API key.");
+        throw new Error("Gemini API key is missing. Add VITE_GEMINI_API_KEY to your environment variables.");
       }
 
       const ai = new GoogleGenAI({ apiKey: apiKey });
@@ -237,7 +237,7 @@ CRITICAL INSTRUCTIONS:
 
         {/* Sidebar / Ask AI */}
         <div className="flex flex-col gap-6">
-          <div className="glass-card p-6 flex flex-col h-[500px]">
+          <div className="glass-card p-6 flex flex-col" style={{ height: '500px' }}>
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-secondary">
@@ -255,7 +255,7 @@ CRITICAL INSTRUCTIONS:
               >
                 <option value="gemini-3.1-flash-lite-preview">Fastest (Flash Lite)</option>
                 <option value="gemini-3-flash-preview">Balanced (Flash)</option>
-                <option value="gemini-3.1-pro-preview">Powerful (Pro)</option>
+                <option value="gemini-2.5-pro">Powerful (Pro)</option>
               </select>
             </div>
             
