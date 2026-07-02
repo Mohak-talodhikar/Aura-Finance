@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useData } from '../context/DataContext';
 import { auth, db } from '../firebase';
-import { doc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { updateProfile, deleteUser } from 'firebase/auth';
 
 export default function Settings() {
@@ -73,11 +73,11 @@ export default function Settings() {
         
         // Update Firestore Document
         const userDocRef = doc(db, 'users', user.uid);
-        await updateDoc(userDocRef, {
+        await setDoc(userDocRef, {
           name,
           phone,
           photoURL: photoURL !== 'https://i.pravatar.cc/150?img=68' ? photoURL : null
-        });
+        }, { merge: true });
         
         showToast('Settings saved successfully!');
       }
