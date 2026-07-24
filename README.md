@@ -6,8 +6,6 @@
 
 Aura Finance is a high-end, editorial-style financial management application designed for precision wealth building. Experience financial clarity through a meticulously crafted interface powered by modern AI and robust infrastructure.
 
-![Aura Finance Preview](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop)  
-*Note: Replace the image above with a screenshot of your actual app dashboard.*
 
 ## 🚀 Features
 
