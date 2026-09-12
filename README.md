@@ -2,7 +2,9 @@
 
 **A simple web app to track money, plan budgets, and get AI-based spending advice.**
 
-Live Demo: https://ais-dev-zkhj5wt447rq3kirgwazw6-344996655997.asia-southeast1.run.app
+Live Demo: https://aura-financ.web.app
+
+<video src="assets/demo.mp4" controls width="100%"></video>
 
 Aura Finance helps you see where your money goes. Add your income and expenses, set monthly limits, create savings goals, and ask an AI assistant questions about your spending. Your data is private to your account and updates instantly on all devices.
 
