@@ -1,71 +1,92 @@
-# Aura Finance 💎
+# Aura Finance
 
-**The Architectural Ledger.**
+**A simple web app to track money, plan budgets, and get AI-based spending advice.**
 
-[Live Demo](https://ais-dev-zkhj5wt447rq3kirgwazw6-344996655997.asia-southeast1.run.app)
+Live Demo: https://ais-dev-zkhj5wt447rq3kirgwazw6-344996655997.asia-southeast1.run.app
 
-Aura Finance is a high-end, editorial-style financial management application designed for precision wealth building. Experience financial clarity through a meticulously crafted interface powered by modern AI and robust infrastructure.
+Aura Finance helps you see where your money goes. Add your income and expenses, set monthly limits, create savings goals, and ask an AI assistant questions about your spending. Your data is private to your account and updates instantly on all devices.
 
+### Who is this for?
 
-## 🚀 Features
+* **Non-technical users:** Anyone who wants an easy way to manage personal money.
+* **Recruiters / Reviewers:** A complete full-stack project showing React, Firebase, and AI integration.
+* **Students / Freshers:** A clean example to learn auth, database, and real-time data in React.
 
-- **Aura AI Financial Insights** 🤖: Chat directly with a sophisticated AI assistant trained on your financial data. Get personalized advice, spending analysis, and actionable steps.
-- **Precision Budgeting** 📊: Set and manage strict limits across custom categories with real-time visual progress indicators.
-- **Goal Architecture** 🏁: Design and track milestones like vacations or major purchases. See your projected completion dates based on current saving rates.
-- **Global Currency Engine** 🌍: Seamlessly switch between USD, EUR, GBP, INR, and JPY with instant portfolio adaptation.
-- **Executive Dashboard** 📈: A bird's-eye view of your net worth, cash flow, and market updates (US & Indian markets).
-- **Secure Ledger** 🔒: powered by Firebase, ensuring your financial data is isolated, secure, and available across devices.
+## What you can do
 
-## 🛠 Tech Stack
+* **See all money in one place:** Dashboard with balance, income, expenses, and monthly charts.
+* **Add transactions:** Record income/expenses with search, filters, and categories.
+* **Set budgets:** Monthly limits per category with progress bars and overspending alerts.
+* **Track savings goals:** Create goals (e.g. vacation), add savings, see progress.
+* **Ask AI for help:** Chat assistant that looks at your actual data to give saving tips.
+* **Use your currency:** Switch between USD, EUR, GBP, INR, JPY.
+* **Login securely:** Email/password + Google login. Each user only sees their own data.
 
-- **Frontend**: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [Motion](https://motion.dev/)
-- **Backend/Database**: [Firebase](https://firebase.google.com/) (Auth, Firestore)
-- **AI Integration**: [Google Gemini API](https://ai.google.dev/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Data Visualization**: [D3.js](https://d3js.org/) (for charts)
+## How it works (simple flow)
 
-## 🎨 Design Philosophy
+1. You sign up / log in.
+2. You add transactions, budgets, and goals — saved securely in Firebase.
+3. Dashboard, notifications, and AI use that data to show insights.
 
-Aura Finance is built with an "Architectural" aesthetic:
-- **Clean Grids**: Focus on spacing and structural hierarchy.
-- **High-Contrast Typography**: Leveraging Inter and Outfit for an editorial feel.
-- **Micro-Animations**: Purposeful motion that guides the user without distraction.
-- **Responsive Precision**: Designed for seamless use on both mobile and desktop.
+No need to read the code to understand it — this is the full idea.
 
-## ⚙️ Setup & Installation
+## Tech used
 
-1. **Clone the repository**:
+| Tech | Used for |
+|---|---|
+| React + TypeScript + Vite | App interface and fast development |
+| Tailwind CSS | Styling |
+| Firebase Auth + Firestore | Login and secure cloud database |
+| Google Gemini API | AI chat insights |
+| Finnhub API (optional) | Market prices, else shows demo data |
+
+Full technical details are in `DEVELOPMENT.md`. Interview Q&A is in `INTERVIEW_PREP.md`.
+
+## Run it locally
+
+1. Clone:
    ```bash
    git clone https://github.com/mohaktalodhikar/aura-finance.git
    ```
-
-2. **Install dependencies**:
+2. Install:
    ```bash
    npm install
    ```
-
-3. **Configure Environment Variables**:
-   Create a `.env` file and add your keys:
+3. Create a `.env` file with your keys:
    ```env
-   GEMINI_API_KEY=your_gemini_api_key
-   VITE_FINNHUB_API_KEY=your_finnhub_api_key
+   VITE_FIREBASE_API_KEY=your-key
+   VITE_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+   VITE_FIREBASE_PROJECT_ID=your-project-id
+   VITE_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your-id
+   VITE_FIREBASE_APP_ID=your-id
+   VITE_GEMINI_API_KEY=your-gemini-key
+   VITE_FINNHUB_API_KEY=your-finnhub-key
    ```
+   > Gemini and Finnhub keys are optional — app works without them.
 
-4. **Run the development server**:
+4. Start:
    ```bash
    npm run dev
    ```
 
-## 🤝 Connect with the Developer
+To get Firebase keys: Firebase Console > Create Project > Enable Auth (Email + Google) + Firestore > Copy web config.
 
-Built with precision by **Mohak Talodhikar**.
+## Project structure (short)
 
-- **Instagram**: [@mohak_talodhikar](https://www.instagram.com/mohak_talodhikar/)
-- **LinkedIn**: [Mohak Talodhikar](https://www.linkedin.com/in/mohak-talodhikar/)
-- **Github**: [@mohaktalodhikar](https://github.com/mohaktalodhikar)
+```
+src/
+  App.tsx          # Login check + page switching
+  firebase.ts      # Firebase setup
+  context/         # Shared data (transactions, budgets, goals)
+  components/      # Sidebar, TopNav, BottomNav
+  views/           # Login, Overview, Transactions, Budgets, Insights, Settings
+```
 
----
+## About the developer
 
-*Architect your wealth. Build your ledger. Experience Aura.*
+**Mohak Talodhikar**
+
+- [LinkedIn](https://www.linkedin.com/in/mohak-talodhikar/)
+- [GitHub](https://github.com/mohaktalodhikar)
+- [Instagram](https://www.instagram.com/mohak_talodhikar/)
