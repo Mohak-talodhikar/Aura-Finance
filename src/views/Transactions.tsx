@@ -83,9 +83,9 @@ export default function Transactions() {
       setAmount('');
       setCategory('Groceries');
       // In a real app, you would also fetch the updated list here or rely on onSnapshot
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error adding transaction:", error);
-      alert("Failed to add transaction. Check console for details.");
+      alert(`Failed to add transaction: ${error?.code || ''} ${error?.message || error}. If code is 'permission-denied', run 'firebase deploy --only firestore:rules'.`);
     } finally {
       setIsAdding(false);
     }
