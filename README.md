@@ -4,9 +4,6 @@
 
 Live Demo: https://aura-financ.web.app
 
-[![Watch Demo Video](assets/demo-thumbnail.jpg)](assets/demo.mp4)
-
-▶ Click the image above to watch the 1:30 demo.
 
 Aura Finance helps you see where your money goes. Add your income and expenses, set monthly limits, create savings goals, and ask an AI assistant questions about your spending. Your data is private to your account and updates instantly on all devices.
 
